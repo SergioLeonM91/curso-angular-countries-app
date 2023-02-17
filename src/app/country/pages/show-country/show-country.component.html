@@ -1,0 +1,53 @@
+
+
+<div
+    *ngIf="!country; else divCountry"
+    class="alert alert-info">
+    Please wait...
+</div>
+
+<ng-template #divCountry>
+    <div class="row">
+        <div class="col-12">
+            <h1>Country: <small>{{ country.name.common }}</small></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Flag</h3>
+            {{ country.flag }}
+        </div>
+
+        <div class="col">
+            <h3>Information</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Population: </strong>{{ country.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Area Code: </strong>{{ country.area}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Alpha Code: </strong>{{ country.cca2}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Translates</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary me-1">{{ country.translations['deu'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['ara'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['bre'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['ces'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['fra'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['ita'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['jpn'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['rus'].common }}</span>
+            <span class="badge bg-primary me-1">{{ country.translations['swe'].common }}</span>
+        </div>
+    </div>
+
+</ng-template>

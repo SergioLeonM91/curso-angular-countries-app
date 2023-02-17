@@ -1,0 +1,22 @@
+<table class="table table-hover animate__animated animate__bounceInLeft animate__faster">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Flag</th>
+            <th>Name</th>
+            <th>Population</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ country.flag }}</td>
+            <td>{{ country.capital }}, {{ country.name.official }}</td>
+            <td>{{ country.population | number }}</td>
+            <td>
+                <a [routerLink]="['/country', country.cca2]" routerLinkActive="router-link-active" >Show</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
